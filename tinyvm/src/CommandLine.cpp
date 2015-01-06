@@ -90,7 +90,7 @@ void CommandLine::print_usage(){
 	std::cout << "		-c compile the source " << std::endl;
 	std::cout << "		-f source file in input " << std::endl;
 	std::cout << "		-l library path or library file in ( -l ./ or -l lib.gl " << std::endl;
-	std::cout << "      -i file ( or file.g ) execute the source file or executable file " << std::endl;
+	std::cout << "		-i file ( or file.g ) execute the source file or executable file " << std::endl;
 }
 
 }/* namespace inout */
