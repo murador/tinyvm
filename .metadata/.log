@@ -9939,3 +9939,27 @@ Caused by: java.io.IOException: File o directory non esistente
 	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:105)
 	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:188)
 	... 7 more
+
+!ENTRY org.eclipse.egit.core 4 0 2015-01-06 15:55:21.301
+!MESSAGE An exception occurred during push on URI https://github.com/murador/tinyvm.git: https://github.com/murador/tinyvm.git: not authorized
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/murador/tinyvm.git: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:501)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:399)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:154)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1173)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:197)
+	at org.eclipse.egit.ui.internal.push.ConfirmationPage$2.run(ConfirmationPage.java:206)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.egit.core 4 0 2015-01-06 15:55:38.772
+!MESSAGE An exception occurred during push on URI https://github.com/murador/tinyvm.git: https://github.com/murador/tinyvm.git: not authorized
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/murador/tinyvm.git: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:501)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:399)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:154)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1173)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:197)
+	at org.eclipse.egit.ui.internal.push.ConfirmationPage$2.run(ConfirmationPage.java:206)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
