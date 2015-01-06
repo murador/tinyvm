@@ -1,0 +1,67 @@
+15:46:45 **** Build of configuration Debug for project tinyvm ****
+make all 
+Building file: ../src/CommandLine.cpp
+Invoking: Cross G++ Compiler
+clang++ -I/home/glutters/llvm_workspace/TinyVM/boost_1_56_0 -O0 -g3 -Wall -c -fmessage-length=0 -DBOOST_LOG_DYN_LINK -MMD -MP -MF"src/CommandLine.d" -MT"src/CommandLine.d" -o "src/CommandLine.o" "../src/CommandLine.cpp"
+Finished building: ../src/CommandLine.cpp
+ 
+Building file: ../src/FileService.cpp
+Invoking: Cross G++ Compiler
+clang++ -I/home/glutters/llvm_workspace/TinyVM/boost_1_56_0 -O0 -g3 -Wall -c -fmessage-length=0 -DBOOST_LOG_DYN_LINK -MMD -MP -MF"src/FileService.d" -MT"src/FileService.d" -o "src/FileService.o" "../src/FileService.cpp"
+Finished building: ../src/FileService.cpp
+ 
+Building file: ../src/GarbageCollector.cpp
+Invoking: Cross G++ Compiler
+clang++ -I/home/glutters/llvm_workspace/TinyVM/boost_1_56_0 -O0 -g3 -Wall -c -fmessage-length=0 -DBOOST_LOG_DYN_LINK -MMD -MP -MF"src/GarbageCollector.d" -MT"src/GarbageCollector.d" -o "src/GarbageCollector.o" "../src/GarbageCollector.cpp"
+Finished building: ../src/GarbageCollector.cpp
+ 
+Building file: ../src/GianoParser.cpp
+Invoking: Cross G++ Compiler
+clang++ -I/home/glutters/llvm_workspace/TinyVM/boost_1_56_0 -O0 -g3 -Wall -c -fmessage-length=0 -DBOOST_LOG_DYN_LINK -MMD -MP -MF"src/GianoParser.d" -MT"src/GianoParser.d" -o "src/GianoParser.o" "../src/GianoParser.cpp"
+Finished building: ../src/GianoParser.cpp
+ 
+Building file: ../src/JITCompiler.cpp
+Invoking: Cross G++ Compiler
+clang++ -I/home/glutters/llvm_workspace/TinyVM/boost_1_56_0 -O0 -g3 -Wall -c -fmessage-length=0 -DBOOST_LOG_DYN_LINK -MMD -MP -MF"src/JITCompiler.d" -MT"src/JITCompiler.d" -o "src/JITCompiler.o" "../src/JITCompiler.cpp"
+In file included from ../src/JITCompiler.cpp:8:
+../src/JITCompiler.h:23:19: warning: private field 'arch' is not used [-Wunused-private-field]
+             ARCH arch;
+                  ^
+1 warning generated.
+Finished building: ../src/JITCompiler.cpp
+ 
+Building file: ../src/VMInstance.cpp
+Invoking: Cross G++ Compiler
+clang++ -I/home/glutters/llvm_workspace/TinyVM/boost_1_56_0 -O0 -g3 -Wall -c -fmessage-length=0 -DBOOST_LOG_DYN_LINK -MMD -MP -MF"src/VMInstance.d" -MT"src/VMInstance.d" -o "src/VMInstance.o" "../src/VMInstance.cpp"
+In file included from ../src/VMInstance.cpp:8:
+../src/VMInstance.h:22:17: warning: private field 'high_mem' is not used [-Wunused-private-field]
+                unsigned long high_mem;
+                              ^
+../src/VMInstance.h:23:17: warning: private field 'low_mem' is not used [-Wunused-private-field]
+                unsigned long low_mem;
+                              ^
+../src/VMInstance.h:24:17: warning: private field 'size_of_memory' is not used [-Wunused-private-field]
+                unsigned long size_of_memory;
+                              ^
+../src/VMInstance.h:25:17: warning: private field 'num_of_thread' is not used [-Wunused-private-field]
+                unsigned long num_of_thread;
+                              ^
+../src/VMInstance.h:30:16: warning: private field 'jc' is not used [-Wunused-private-field]
+                JITCompiler *jc;
+                             ^
+../src/VMInstance.h:31:21: warning: private field 'gc' is not used [-Wunused-private-field]
+                GarbageCollector *gc;
+                                  ^
+6 warnings generated.
+Finished building: ../src/VMInstance.cpp
+ 
+Building file: ../src/tinyvm.cpp
+Invoking: Cross G++ Compiler
+clang++ -I/home/glutters/llvm_workspace/TinyVM/boost_1_56_0 -O0 -g3 -Wall -c -fmessage-length=0 -DBOOST_LOG_DYN_LINK -MMD -MP -MF"src/tinyvm.d" -MT"src/tinyvm.d" -o "src/tinyvm.o" "../src/tinyvm.cpp"
+Finished building: ../src/tinyvm.cpp
+ 
+Building target: tinyvm
+Invoking: Cross G++ Linker
+clang++  -o "tinyvm"  ./src/CommandLine.o ./src/FileService.o ./src/GarbageCollector.o ./src/GianoParser.o ./src/JITCompiler.o ./src/VMInstance.o ./src/tinyvm.o   -lboost_log -lboost_thread -lboost_date_time -lrt -lboost_filesystem -lboost_log_setup -lpthread -lboost_system
+Finished building target: tinyvm
+ 

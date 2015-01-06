@@ -1,0 +1,77 @@
+/*
+ * CommandLine.cpp
+ *  Created on: 17/ott/2014
+ *      Author: Gianfranco Murador
+ *  - Definisce un classe per la gestione
+ *  - della linea di comando
+ */
+
+#include "CommandLine.h"
+#include <iostream>
+#ifdef _Windows
+#include <myopt.h>
+#endif
+#ifdef __linux__
+#include <unistd.h>
+#endif
+
+namespace inout {
+
+CommandLine::CommandLine() {
+
+}
+
+CommandLine::~CommandLine() {
+
+}
+
+// in questo caso posso usare getopt
+CL* CommandLine::parse(int argc, char * argv[]) {
+#ifdef __linux__
+	CL * cl = new CL;
+	cl->ok = 1;
+	// se viene settato uso la compilazione
+	cl->compile = 0;
+	int option;
+	while ((option = getopt(argc, argv, "")) != -1) {
+		switch (option) {
+		case 'c':
+			cl->compile = 1;
+			break;
+		case 'f':
+			cl->input.append(optarg);
+			break;
+		case 'l':
+			cl->libpath.append(optarg);
+		break;
+		case 'i':
+			cl->interactive = 1;
+			break;
+		default:
+			print_usage();
+			cl->ok = 0;
+			break;
+		}
+	}
+	return cl;
+#endif
+#ifdef _Windows
+   parse_win(argc,argv);
+#endif
+}
+
+/* TODO: fornire un implementazione per  Windows*/
+CL* CommandLine::parse_win(int argc, char * argv[]) {
+   CL *cl = new CL();
+   return cl;
+}
+
+
+/**
+ * Stampa l'usage per il programma
+ */
+void CommandLine::print_usage(){
+	std::cout << "" << std::endl;
+}
+
+}/* namespace inout */

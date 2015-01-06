@@ -1,0 +1,29 @@
+/*
+ * JITCompiler.cpp
+ *  Created on: 05/nov/2014
+ *      Author: Gianfranco Murador
+ * Define a llvm jit compiler wrapper
+ */
+
+#include "JITCompiler.h"
+
+namespace vm {
+	namespace compiler {
+				JITCompiler::JITCompiler() {
+					// TODO Auto-generated constructor stub
+				}
+				JITCompiler::~JITCompiler() {
+					// TODO Auto-generated destructor stub
+				}
+
+				std::string JITCompiler::translate(std::stringstream out,
+													int pos = 100,
+													ARCH arch = 0)
+				{
+
+					return "";
+
+				}
+		} /* namespace compiler */
+} /* namespace vm */
+

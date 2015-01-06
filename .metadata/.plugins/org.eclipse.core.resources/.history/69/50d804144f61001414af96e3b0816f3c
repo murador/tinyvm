@@ -1,0 +1,7 @@
+/**
+ * Logger.cpp
+ *  Created on: 18/ott/2014
+ *      Author: Gianfrnaco Murador
+ */
+
+#include "Logger.h"

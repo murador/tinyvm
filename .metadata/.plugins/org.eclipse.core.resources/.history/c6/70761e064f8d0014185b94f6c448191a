@@ -1,0 +1,25 @@
+/*
+ * GarbageCollector.h
+ *
+ *  Created on: 26/dic/2014
+ *      Author: Gianfranco Murador
+ * Defines a garbage collector. NOTE: see how to integrate this
+ * in
+ */
+
+#ifndef GARBAGECOLLECTOR_H_
+#define GARBAGECOLLECTOR_H_
+
+namespace vm {
+namespace runtime {
+
+class GarbageCollector {
+public:
+	GarbageCollector();
+	virtual ~GarbageCollector();
+};
+
+} /* namespace runtime */
+} /* namespace vm */
+
+#endif /* GARBAGECOLLECTOR_H_ */

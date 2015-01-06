@@ -1,0 +1,30 @@
+/*
+ * GarbageCollector.h
+ *
+ *  Created on: 26/dic/2014
+ *      Author: Gianfranco Murador
+ * Defines a weak garbage collector for the vm.
+ * I use smart pointer to allocate object,
+ */
+
+#ifndef GARBAGECOLLECTOR_H_
+#define GARBAGECOLLECTOR_H_
+#ifndef _CXX11_
+// TODO: verificare questa parte
+	#include <boost/smart_ptr/scoped_ptr.hpp>
+#endif
+
+
+namespace vm {
+namespace runtime {
+
+class GarbageCollector {
+public:
+	GarbageCollector();
+	virtual ~GarbageCollector();
+};
+
+} /* namespace runtime */
+} /* namespace vm */
+
+#endif /* GARBAGECOLLECTOR_H_ */

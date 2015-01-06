@@ -1,0 +1,89 @@
+/*
+ * CommandLine.cpp
+ *  Created on: 17/ott/2014
+ *      Author: Gianfranco Murador
+ *  - Definisce un classe per la gestione
+ *  - della linea di comando
+ */
+
+#include "CommandLine.h"
+#include <iostream>
+#ifdef _Windows
+#include <myopt.h>
+#endif
+#ifdef __linux__
+#include <unistd.h>
+#endif
+
+namespace inout {
+
+CommandLine::CommandLine() {}
+CommandLine::~CommandLine() {}
+
+/**
+ * Fa il parsing della linea di comando
+ * tramite la funzionalità dell'os posix
+ **/
+CL* CommandLine::parse(int argc, char * argv[]) {
+#ifdef __linux__
+	CL * cl = new CL;
+	cl->ok = 1;
+	// se viene settato uso la compilazione
+	cl->compile = 0;
+	int option;
+
+	if ( argc == 1 ) {
+		cl->ok = 0;
+		return cl;
+	}
+
+	while ((option = getopt(argc, argv, "")) != -1) {
+		switch (option) {
+		case 'c':
+			cl->compile = 1;
+			break;
+		case 'f':
+			cl->input.append(optarg);
+			break;
+		case 'l':
+			cl->libpath.append(optarg);
+		break;
+		case 'i':
+			// in this case run the file (
+			cl->interactive = 1;
+			break;
+		default:
+			cl->ok = 0;
+			break;
+		}
+	}
+	return cl;
+#endif
+#ifdef _Windows
+   parse_win(argc,argv);
+#endif
+}
+
+/* TODO: fornire un implementazione per  Windows*/
+CL* CommandLine::parse_win(int argc, char * argv[]) {
+   CL *cl = new CL();
+   return cl;
+}
+
+
+/**
+ * Stampa l'usage per il programma
+ **/
+void CommandLine::print_usage(){
+	std::cout << "Usage:" << std::endl;
+	std::cout << "tinyvm -c -f file.g -l library" << std::endl;
+	std::cout << "Licence: gpl , author: Gianfranco Murador " << std::endl;
+	std::cout << "Please report bug here: http://quite-nice-coding.org" << std::endl;
+	std::cout << "Usage: " << std::endl;
+	std::cout << "		-c compile the source " << std::endl;
+	std::cout << "		-f source file in input " << std::endl;
+	std::cout << "		-l library path or library file in ( -l ./ or -l lib.gl " << std::endl;
+	std::cout << "      -i file ( or file.g ) execute the source file or executable file " << std::endl;
+}
+
+}/* namespace inout */

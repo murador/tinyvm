@@ -1,0 +1,34 @@
+/*
+ * VMInstance.h
+ *
+ *  Created on: 12/nov/2014
+ *      Author: Gianfranco Murador
+ * Define the instance of the virtual machine,
+ * such as free memory , object allocated ad jit provisioning
+ */
+
+#ifndef VMINSTANCE_H_
+#define VMINSTANCE_H_
+#include "JITCompiler.h"
+using namespace vm::compiler;
+
+namespace vm {
+
+namespace runtime {
+
+	class VMInstance {
+	private:
+		unsigned long high_mem;
+		unsigned long low_mem;
+		unsigned long size_of_memory;
+		unsigned long num_of_thread;
+		JITCompiler jc;
+	public:
+		VMInstance();
+		virtual ~VMInstance();
+	};
+
+ } /* namespace runtime */
+} /* namespace vm */
+
+#endif /* VMINSTANCE_H_ */
